@@ -1,0 +1,2557 @@
+/** CSS **/
+
+
+/** IMPORTANDO FONTES **/
+
+@font-face {
+    font-family:prime_regular;
+    src: url('../fontes/Prime Regular.otf');
+
+}
+
+@font-face {
+    font-family:timeless;
+    src: url('../fontes/Timeless.ttf');
+
+}
+
+body {
+    margin:0px;
+	padding:0px;
+
+
+}
+
+/** MENU **/
+
+#area_menu {
+    width:100%;
+    height: 100px;
+    background-color:#000080;
+    position: fixed;
+    z-index: 999;
+}
+
+#logo {
+    width:200px;
+    height: 70px;
+    background-color: #FFC30D;
+    margin-left: 50px;
+    margin-top: 15px;
+    float: left;
+
+}
+
+#menu{
+    width: 900px;
+    height: 100px;
+    margin: auto;
+
+}
+
+#menu_principal {
+    margin:0px;
+	padding:0px;
+    margin-left: 130px;
+    position: absolute;
+    margin-top: 40px;
+
+}
+
+#menu_principal li {
+	display: block;
+	padding: 15px 20px;
+	font-family: monospace;
+	text-transform: uppercase;
+	font-size: 15px;
+	letter-spacing: 2px;
+	float: left;
+    color: white;
+
+}
+
+.submenu {
+	width:225px;
+	height:auto;
+	display:none;
+	background-color:darkblue;
+	transform:1s;
+	transform:20px;
+	position:absolute;
+	margin-top:15px;
+	font-size:5px;
+
+
+}
+
+.submenu li {
+    color: white;
+	margin-left:-55px;
+
+
+}
+
+
+#menu_principal li:hover > .submenu {
+  	display:block;
+
+
+}
+
+
+#area_usuario {
+    width: 210px;
+    height: 80px;
+    margin-top: -87px;
+    margin-left: 85%;
+    position: right;
+
+}
+
+#icon_user_menu {
+	width:55px;
+	height:55px;
+	margin-left:12px;
+	position:absolute;
+	margin-top:10px;
+	float:left;
+	background-image:url('../icones/user-xxl.png');
+	background-size:100%;
+
+}
+
+#words_user_menu {
+	width:115px;
+	height:20px;
+	float:left;
+	margin-left:80px;
+	margin-top:5px;
+	color:white;
+	font-family: monospace;
+	padding-top:15px;
+	font-size:14px;
+
+
+}
+
+#words_user_menu2 {
+	width:115px;
+	height:20px;
+	float:left;
+	margin-left:80px;
+	margin-top:0px;
+	color:white;
+	font-family: monospace;
+
+}
+
+#down_user_menu {
+	width:12px;
+	height:12px;
+	margin-top:43px;
+	position:absolute;
+	background-image:url('../icones/arrow-204-xxl.png');
+	background-size:100%;
+	background-repeat:no-repeat;
+	margin-left:186px;
+
+}
+
+#area_usuario_my {
+	width: 210px;
+    height: 80px;
+	background-color:white;
+	margin-left: 85%;
+	display:none;
+
+
+}
+
+.text_menu_area_user {
+	width: 210px;
+    height: 25px;
+	text-align:center;
+	font-family:monospace;
+
+}
+
+
+#area_usuario:hover > #area_usuario_my {
+ 	display:block;
+
+}
+
+
+/** CONTEUDO**/
+
+
+
+/** PÁGINA HOME **/
+
+
+/* Slide */
+
+#slide_home {
+	width:100%;
+	height:650px;
+    background-color: black;
+
+}
+
+
+
+/* Area de Pesquisa Rápida */
+
+#area_pesquisa_rapida {
+    width: 380px;
+    height: 420px;
+    background-color: white;
+    position: absolute;
+    margin-left: 120px;
+    margin-top: 95px;
+
+}
+
+#text_origem_pesquisa {
+    height: 22px;
+    margin-left:55px;
+    margin-top:80px;
+    width:275px;
+
+}
+
+#text_destino_pesquisa2 {
+    height: 22px;
+    margin-left:55px;
+    margin-top:40px;
+    width:275px;
+
+}
+
+#radio_ida_e_volta {
+    width: 275px;
+    height: 50px;
+    margin-left: 55px;
+    margin-top: 27px;
+    font-family: monospace;
+	font-size: 15px;
+
+}
+
+#radio_apenas_ida {
+    margin-left: 20px;
+
+}
+
+#data_ida_e_volta {
+    width: 355px;
+    height: 30px;
+    margin-left: 43px;
+    margin-top: 20px;
+    font-family: monospace;
+	font-size: 15px;
+
+}
+
+#data_ida {
+    float: left;
+}
+
+#data_volta {
+    margin-left: 15px;
+
+}
+
+#buttom_pesquisa_rapida {
+    width: 90px;
+    height: 30px;
+    margin-left: 155px;
+    margin-top: 35px;
+    font-family: monospace;
+	font-size: 15px;
+}
+
+
+/** Area de Produtos Home **/
+
+#area_produtos_home {
+	width:100%;
+	height:650px;
+    background-color: white;
+    margin: auto;
+}
+
+#container_produtos {
+    width: 1720px;
+    height: 650px;
+    margin: auto;
+
+}
+
+.container_passagens {
+    width:400px;
+    height:590px;
+    margin-left: 22px;
+    margin-top: 40px;
+    float: left;
+
+
+}
+
+.image_passagens {
+    height: 300px;
+    width: 360px;
+    border: solid 1px;
+    margin: auto;
+    background-color: darkgrey;
+
+}
+
+.titulo_passagem {
+    height: 25px;
+    width: 350px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    font-family: monospace;
+	font-size: 20px;
+	font-weight:bold;
+
+}
+
+.descricao_passagem {
+    height: 170px;
+    width: 360px;
+    border: solid 1px;
+    margin: auto;
+    margin-top: 20px;
+
+}
+
+.confirmacao_passagem {
+    height: 30px;
+    width: 360px;
+    margin: auto;
+    margin-top: 22px;
+
+}
+
+.botao_confirmar_passagem {
+    width: 150px;
+    height: 30px;
+    margin-left: 100px;
+    font-family: monospace;
+	font-size: 15px;
+
+}
+
+#area_produtos_mais_vendidos {
+    width:100%;
+	height:650px;
+    background-color: white;
+    margin: auto;
+    background-color: #DCDCDC;
+
+}
+
+.image_passagens_circle {
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    background-color: darkgrey;
+    border-radius: 200px;
+    border: solid 1px;
+
+}
+
+/** PÁGINA DE MISSÃO, VISÃO E VALORES **/
+
+#background_missao{
+	width:100%;
+	height:650px;
+	background-color:darkorange;
+    background-image:url('../imagens/how_to_successfully_apply_for_a_new_job_in_your_current_company.jpg');
+	background-size:100%;
+    background-attachment: fixed;
+
+
+}
+
+.conteudo_missao_visao_valores {
+	width:100%;
+	height:380px;
+
+}
+
+
+#background_visao {
+	width:100%;
+	height:650px;
+    background-image:url('../imagens/cityheader.png');
+    background-size: 100%;
+    background-attachment: fixed;
+
+}
+
+#background_valores {
+	width:100%;
+	height:650px;
+	background-color:darkorange;
+    background-image:url('../imagens/mental-health-workplace.jpg');
+    background-size: 100%;
+    background-attachment: fixed;
+
+}
+
+
+
+.title_background {
+	height:110px;
+	width:438px;
+	position:absolute;
+	margin-top:190px;
+	margin-left:40%;
+	font-family: monospace;
+	text-transform: uppercase;
+	font-size: 100px;
+	font-weight:bold;
+	text-align:center;
+	color:white;
+    display: inline-block;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+}
+
+.title_background:hover {
+    -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+
+}
+
+.text_mvv {
+	width:1650px;
+	margin:auto;
+	height:380px;
+	font-family: timeless;
+	font-size: 20px;
+	text-align:justify;
+
+
+}
+
+.container_text_mvv {
+  	width:1560px;
+	height:320px;
+    padding: 40px;
+
+
+}
+
+/** PÁGINA QUEM SOMOS **/
+
+#quem_somos {
+    width: 100%;
+    height: 750px;
+	background-color:grey;
+    font-size: 20px;
+	color:white;
+}
+
+#historia {
+    width: 100%;
+    height: 750px;
+    background-color: #D3D3D3;
+    font-size: 20px;
+	color:black;
+}
+
+.titulo_sobre_empresa {
+    width: 200px;
+    height: 20px;
+    margin: auto;
+    font-family: monospace;
+    font-size: 22px;
+    text-align: center;
+    padding-top: 40px;
+    font-weight: bold;
+
+
+}
+
+.container_sobre_empresa {
+    width: 1500px;
+    height: 800px;
+    margin: auto;
+
+
+
+}
+
+#text_quem_somos {
+    width: 850px;
+    height: 600px;
+    float: left;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 0px;
+    font-family: timeless;
+    text-indent:4em;
+    text-align: justify;
+
+
+}
+
+#image_quem_somos {
+    width: 495px;
+    height: 600px;
+    border:solid 1px;
+    margin-left: 950px;
+    margin-top: 60px;
+    position: absolute;
+
+}
+
+#text_historia {
+    width: 850px;
+    height: 600px;
+    float: left;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 0px;
+    font-family: timeless;
+    text-indent:4em;
+    text-align: justify;
+    margin-left: 620px;
+
+}
+
+#image_historia {
+    width: 510px;
+    height: 510px;
+    margin-top: 110px;
+    position: absolute;
+
+
+}
+
+.pequenas_imagens_historia {
+    width: 240px;
+    height: 240px;
+    float: left;
+    border: solid 1px;
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+
+/** PÁGINA DE LOGIN **/
+
+#espaco_login {
+	width:100%;
+	height:550px;
+
+}
+
+#container_login {
+	width:1000px;
+	height:550px;
+	margin:auto;
+
+}
+
+#text_image_login {
+	width:250px;
+	height:60px;
+	margin-left:360px;
+	margin-top:70px;
+	position:absolute;
+
+}
+
+#imagem_login {
+	width:60px;
+	height:60px;
+    background-image:url('../icones/user.png');
+    background-size: 100%;
+    float: left;
+
+}
+
+#texto_login {
+ 	width:200px;
+	height:60px;
+    font-family: monospace;
+    margin-top: 21px;
+    margin-left: 75px;
+    font-weight: bold;
+    font-size: 22px;
+
+
+}
+
+#user_space {
+	height:35px;
+	width:400px;
+	margin-top:200px;
+	margin-left:280px;
+	position:absolute;
+
+}
+
+#user_space_senha {
+  	height:35px;
+	width:400px;
+	margin-top:250px;
+	margin-left:280px;
+	position:absolute;
+
+}
+
+.user_email_login {
+	width:60px;
+	height:15px;
+    text-align: right;
+    font-family: monospace;
+    font-size: 15px;
+	padding: 10px;
+    float: left;
+}
+
+.user_login {
+	height: 20px;
+    width: 300px;
+    margin-top: 5px;
+
+}
+
+#link_cadastro {
+    width:350px;
+    height: 50px;
+    margin-top: 350px;
+    margin-left: 350px;
+    position: absolute;
+    font-family:timeless;
+    font-size: 15px;
+
+}
+
+#edicao_texto_login {
+    color: darkorange;
+    font-weight: bold;
+}
+
+/** TELA DE DICAS **/
+
+#espaco_dicas {
+    width: 100%;
+    min-height: 700px;
+    height: auto;
+
+}
+
+
+
+.introducao_dicas {
+    width:1000px;
+    height:250px;
+    margin: auto;
+    margin-top: 50px;
+
+}
+
+
+
+.titulo_introducao_dicas {
+    width: 200px;
+    margin: auto;
+    height: 35px;
+    text-align: center;
+    margin-top: 15px;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+
+}
+
+.texto_introducao_dicas {
+    height:150px;
+    width: 1000px;
+    font-family: timeless;
+    text-align: justify;
+    font-size: 19px;
+    margin-top: 50px;
+
+}
+
+#container_dicas {
+    width: 1600px;
+    min-height: 600px;
+    height: auto;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 30px;
+
+
+}
+
+.item_dica {
+    width: 625px;
+    height: 700px;
+    float: left;
+    margin-left: 100px;
+    margin-top: 30px;
+
+}
+
+.titulo_dica {
+    width: 625px;
+    height: 30px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.imagem_dica {
+    width: 625px;
+    height: 225px;
+    margin-top: 10px;
+    background-image: url(../imagens/Corcovado%20Mountain%20and%20Sugarloaf%20Mountain%20in%20Distance,%20Rio%20de%20Janeiro,%20Brazil.jpg);
+    background-size: 100%;
+    border-radius: 20px;
+
+}
+
+.texto_dica {
+    width: 625px;
+    height: 400px;
+    font-family: timeless;
+    text-align: justify;
+    font-size: 19px;
+    margin-top: 35px;
+
+
+}
+
+#deixe_sua_dica {
+    width: 1600px;
+    height: 650px;
+    border: solid 1px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 40px;
+
+}
+
+#container_nome_lugar {
+    width: 370px;
+    height: 150px;
+    margin-top: 50px;
+    margin-left: 400px;
+    float: left;
+
+}
+
+.titulo_formulario_dicas {
+    font-size: 19px;
+    font-family: monospace;
+    font-weight: bold;
+    margin-left: 20px;
+
+}
+
+#input_nome_lugar {
+    height: 20px;
+    width: 200px;
+    margin-top: 20px;
+
+}
+
+#container_selecione_imagem {
+    width: 400px;
+    height: 150px;
+    margin-top: 50px;
+    margin-left: 80px;
+    float: left;
+
+}
+
+#selecione_imagem_dica {
+    height: 20px;
+    width: 400px;
+    margin-top: 20px;
+    font-family: timeless;
+    font-size: 17px;
+    margin-left: 23px;
+}
+
+#container_texto_dica {
+    width: 850px;
+    height: 320px;
+    margin-top: 200px;
+    position: absolute;
+    margin-left: 400px;
+
+}
+
+#titulo_texto_dica {
+    width: 100%;
+    height: 25px;
+    font-size: 19px;
+    font-family: monospace;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+#dica_txtarea {
+    width: 845px;
+    height: 210px;
+    margin-top: 20px;
+    border-radius: 20px;
+
+}
+
+#salvar_dicas {
+    height: 30px;
+    width: 100px;
+    margin-top: 20px;
+    border-radius: 10px;
+    margin-left: 750px;
+
+
+}
+
+#espaco_dica_mapa {
+    height: 50px;
+
+}
+
+/** PÁGINA PONTOS TURISTICOS **/
+
+
+
+#espaco_turismo {
+    width: 100%;
+    min-height: 800px;
+    background-color: white;
+
+}
+
+#container_turismo {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 60px 0;
+    min-height: 800px;
+
+}
+
+#titulo_turismos {
+	font-family:monospace;
+    font-size: 22px;
+	font-weight: 900px;
+    text-align: center;
+}
+
+#tab-menu {
+ 	text-align: center;
+	margin: 20px 0 40px 0;
+
+}
+
+#tab-menu li {
+	display: inline-block;
+
+}
+
+#tab-menu li a {
+	display: inline-block;
+	color: grey;
+	border: 4px solid;
+	padding: 10px 0px;
+	width: 185px;
+	margin: 20px;
+	text-decoration: none;
+	font-family: 'Playfair Display';
+	text-transform: uppercase;
+	letter-spacing: 2px;
+    border-color: grey;
+
+}
+
+ul li a.active {
+	background: darkgrey;
+	color: white;
+	border-color: #56CC9D;
+}
+
+.item {
+	overflow: hidden;
+    min-height: 1300px;
+
+}
+
+.text_estacao {
+    width: 100%;
+    height: auto;
+    font-size: 35px;
+    margin: auto;
+    margin-top: 200px;
+    position: absolute;
+    z-index: 500;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.item_img img {
+	width: 100%;
+    height: 400px;
+	position: relative;
+    background-color: darkblue;
+
+}
+
+.descricao_estacao {
+	font-family: monospace;
+	font-size: 20px;
+	line-height: 1.4;
+	color: rgba(0,0,0,.7);
+	margin-bottom: 40px;
+    text-align: justify;
+    margin-top: 40px;
+    height: auto;
+
+}
+
+.container_produtos_turismos {
+    width: 1100px;
+    height: 500px;
+    position: absolute;
+    margin-left: -60px;
+
+}
+
+.caixa_passagem  {
+    width: 300px;
+    height: 500px;
+    float: left;
+    margin-left: 55px;
+
+}
+
+.imagem_passagem_turismo {
+    width: 300px;
+    height: 200px;
+    border: solid 1px;
+
+}
+
+.titulo_passagem_turismo {
+    text-align: center;
+    font-size: 16px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.descricao_passagem_turismo {
+    width: 300px;
+    height: 200px;
+    text-align: justify;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+.preco_passagem_turismo {
+    width: 100px;
+    height: 100px;
+    margin-left: 110px;
+    font-weight: bold;
+}
+
+.comprar_passagem_turismo {
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    margin-left: 110px;
+
+}
+
+/** PÁGINA NOSSAS FROTAS **/
+
+#area_frota {
+    width: 100%;
+    min-height: 800px;
+    height: auto;
+    overflow: hidden;
+
+}
+
+#container_frota {
+    width: 1300px;
+    min-height: 800px;
+    height: auto;
+    margin: auto;
+
+}
+
+#titulo_frota {
+ 	font-family:monospace;
+    font-size: 22px;
+	font-weight: 900px;
+    text-align: center;
+    margin-top: 60px;
+
+
+}
+
+#tab-menu_frota {
+   	text-align: center;
+	margin: 80px 0 40px 0;
+
+
+}
+
+#tab-menu_frota li  {
+    display: inline-block;
+
+
+}
+
+#tab-menu_frota li a {
+ 	display: inline-block;
+	color: grey;
+	border: 4px solid;
+	padding: 10px 0px;
+	width: 225px;
+	margin: 20px;
+	text-decoration: none;
+	font-family: 'Playfair Display';
+	text-transform: uppercase;
+	letter-spacing: 2px;
+    border-color: grey;
+    border-radius: 10px;
+
+}
+
+#tab-menu_frota li a.active{
+    background-color: black;
+
+}
+
+.item_frota {
+	overflow: hidden;
+    min-height: 900px;
+
+}
+
+.titulo_onibus {
+	font-family: 'Playfair Display';
+    font-size: 22px;
+	font-weight: 900px;
+    text-align: center;
+    margin-top: 30px;
+    letter-spacing: 1.5px;
+    color: grey
+}
+
+.texto_frota {
+    font-family: monospace;
+    font-size: 20px;
+    text-align: justify;
+    margin-top: 50px;
+	color: rgba(0,0,0,.7);
+}
+
+.imagem_onibus {
+    width: 100%;
+    height: 600px;
+    background-color: azure;
+    margin-top: 30px;
+
+}
+
+
+/** PÁGINA CONTATOS **/
+
+#espaco_contatos {
+    width: 100%;
+    height: auto;
+    min-height: 1000px;
+    overflow: hidden;
+
+}
+
+#titulo_contatos {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-family: monospace;
+    margin-top: 60px;
+    font-size: 28px;
+
+}
+
+#container_esquerdo_contatos {
+    width: 60%;
+    height: auto;
+    min-height: 1000px;
+    overflow: hidden;
+    float: left;
+
+}
+
+#container_direito_contatos {
+    width: 40%;
+    height: auto;
+    min-height: 1000px;
+    overflow: hidden;
+    float: left;
+
+}
+
+#area_esquerda_contatos {
+    width: 1050px;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    
+}
+
+#descricao_contatos {
+    font-family: monospace;
+	font-size: 20px;
+	line-height: 1.5;
+    text-align: justify;
+    font-size: 20px;
+
+}
+
+#titulo_duvidas_frequentes {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  font-family: monospace;
+  margin-top: 50px;
+  font-size: 22px;
+
+}
+
+.perguntas_frequentes {
+    background-color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 990px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    font-family: monospace;
+    border: solid 1px;
+ 	border-radius:10px;   
+    
+
+}
+
+.perguntas_frequentes:hover  {
+    background-color: darkgray;
+    color: white;
+
+
+}
+
+.resposta_pergunta {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    transition: 2s;
+    font-size: 18px;
+    font-family: monospace;
+    text-align: justify;
+    line-height: 1.4;
+
+}
+
+#deixe_sugestao{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-family: monospace;
+    margin-top: 50px;
+    font-size: 22px;
+    
+}
+
+#descricao_sugestao {
+    font-family: monospace;
+	font-size: 20px;
+	line-height: 1.5;
+    text-align: justify;
+    font-size: 20px;    
+    
+}
+
+#email_sugestao {
+    width: 400px;
+    height: 25px;
+    margin-left: 10px;
+    margin-top: 20px;
+    
+    
+}
+
+#area_sugestao {
+    margin-top: 20px;
+    width: 1020px;
+    height: 300px;
+    border: solid 1px;
+    border-radius: 30px;
+    
+}
+
+#salvar_sugestao {
+    height: 40px;
+    width: 150px;
+    margin-left: 870px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+#area_chatbot {
+    width: 700px;
+    height:650px;
+    position: fixed;
+    background-color: darkblue;
+    margin-left: 10px;
+    
+    
+}
+
+/** PAGINA DO USUARIO **/
+
+
+#area_pagina_usuario {
+    width: 1600px;
+    min-height: 900px;
+    height: auto;
+    margin: auto;
+    
+}
+
+#area_notificacoes{
+    position: absolute;
+    width: 350px;
+    height: 170px;
+    background-color: blueviolet;
+    margin-left: 1250px;
+    margin-top: 20px;
+    border-radius: 20px;
+    
+}
+
+#titulo_pagina_usuario {
+    width: 100%;
+    height: auto;
+    font-family: monospace;
+    padding-top: 120px;
+    font-size: 25px;
+    text-align: center;
+
+}
+
+#foto_user{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    margin-top: 30px;
+    border-radius: 100px;
+    margin-left: 44%;
+    
+}
+
+#nome_usuario {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 22px;
+    font-family: monospace;
+   
+}
+
+#area_viagem_user {
+    width: 100%;
+    height: auto;
+    border: solid 1px;
+    margin-top: 90px;
+    border-radius: 30px;
+
+}
+
+.titulo_dados {
+    text-align: center;
+    margin-top: 20px;
+} 
+
+#espaco_viagems_recentes {
+    width: 100%;
+    min-height: 90px;
+    height: auto;
+    
+}
+
+.divisao_dados {
+    width: auto;
+    float: left;
+    margin-left: 140px;
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+.titulo_conteudo {
+    font-family: monospace;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+#area_dados_user {
+    width: 100%;
+    min-height: 800px;
+    border: solid 1px;
+    border-radius: 30px;
+    margin-top: 50px;
+    
+}
+
+.espaco_dados_oficiais {
+    width: 100%;
+    min-height: 90px;
+    height: auto;  
+    margin-top: 30px;
+    
+}
+
+.espaco_dados_oficiais_esquerdo {
+    width: 300px;
+    height: 90px; 
+    float: left;
+    margin-left: 300px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.espaco_dados_oficiais_centralizado {
+    width: 300px;
+    height: 90px;
+    margin: auto;
+    float: left;
+    margin-left: 50px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 20px;
+    
+}
+
+.espaco_dados_oficiais_direito {
+    width: 300px;
+    height: 90px; 
+    float: left;
+    margin-left: 50px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.titulo_dados_endereco {
+    margin-top: 80px;
+    text-align: center;
+    
+}
+
+#altetar_dados {
+    font-family: monospace;
+    margin-left: 1450px;
+    font-size: 18px;
+    margin-top: 30px;
+    
+}
+
+#area_acompanhe_onibus {
+    width: 100%;
+    min-height: 800px;
+    border: solid 1px;
+    border-radius: 30px;
+    margin-top: 70px;
+    
+    
+}
+
+#area_mapa_onibus {
+    width: 1350px;
+    height: 500px;
+    margin: auto;
+    border: solid 1px;
+    margin-top: 40px;
+    
+}
+
+#aviso_onibus {
+    width: 700px;
+    height: 60px;
+    border: solid 1px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    font-family: monospace;
+    color: darkorange;
+    font-size: 22px;
+    padding-top: 50px;
+}
+
+#tabela_proximas_paradas {
+    width: 900px;
+    height: 300px;
+    margin: auto;
+    margin-top: 80px;
+    
+}
+
+#titulo_proximas_paradas {
+    width: 900px;
+    height: 20px;
+    background-color: black;
+    color: white;
+    
+}
+
+#titulo_proximas_paradas_esquerdo {
+    width: 49.4%;
+    text-align: center;
+    font-family: monospace;
+    font-size: 18px;
+    float: left;
+    border: solid 1px;
+    font-weight: bold;
+    
+}
+
+#titulo_proximas_paradas_direito {
+    width: 50%;
+    float: left;
+    text-align: center;
+    font-family: monospace;
+    font-size: 18px;
+    border: solid 1px;
+    font-weight: bold;
+
+}
+
+#dados_proximas_paradas {
+    width: 100%;
+    height: 175px;
+    background-color: white;
+    
+}
+
+#dados_proximas_paradas_esquerdo {
+    width: 49.4%;
+    height: 100%;
+    text-align: center;
+    font-family: monospace;
+    font-size: 18px;
+    float: left;
+    border: solid 1px;
+    font-weight: bold;   
+}
+
+#dados_proximas_paradas_direito {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    font-family: monospace;
+    font-size: 18px;
+    float: left;
+    border: solid 1px;
+    font-weight: bold;  
+    
+}
+
+.conteudo_local {
+    width: 100%;
+    height: 30px;
+    border: solid 1px;
+        
+}
+
+/** PÁGINA POSTOS RODOVIARIOS **/
+
+#area_postos {
+    width: 1600px;
+    min-height: 1200px;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    
+}
+
+
+
+#area_mapa_posto {
+    width: 1050px;
+    height: 400px;
+    background-color: cornflowerblue;
+    margin: auto;
+    margin-top: 50px;
+    
+}
+
+#area_mapa_posto img {
+    width: 1050px;
+    height: 400px;    
+    
+}
+
+#espaco_btw {
+    height: 50px;
+}
+
+#tabela_postos_rodoviario {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    border: solid 1px;
+    margin: auto;
+    border-radius: 40px;
+    
+}
+
+#titulo_tabela_postos {
+    width: 100%;
+    height: 50px;
+    background-color: darkblue;
+    
+}
+
+
+.espaco_entre_tabela_postos {
+    width: 33%;
+    border: solid 1px white;
+    height: 38px;
+    float: left;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    font-family: monospace;
+    padding-top: 10px;
+    
+}
+
+#conteudo_postos_rodoviario {
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    
+    
+}
+
+.espaco_entre_tabela_postos_conteudo {
+    width: 33%;
+    border: solid 1px;
+    height: 34px;
+    float: left;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    font-family: monospace;
+    padding-top: 5px;    
+    
+}
+
+#area_pesquisa_postos {
+     width: 300px;
+    height: 30px;
+    margin-left: 1250px;
+    margin-top: 50px;
+    border-radius: 15px;   
+    background-color: azure;
+    
+}
+
+#area_pesquisa_postos img {
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    margin-top: -28px;
+    margin-left: 265px;
+    
+}
+
+#barra_pesquisa_posto {
+    width: 300px;
+    height: 25px;
+    border-radius: 15px;
+ 
+}
+
+
+/** AREA DA COMPRA DE VIAGENS **/
+
+
+#area_compra_fase1 {
+    min-height: 800px;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+#area_pesquisa_viagem {
+    width: 1200px;
+    height: 170px;
+    background-color: darkgrey;
+    margin: auto;
+    margin-top: 50px;
+    
+}
+
+#pesquisa_origem {
+    margin-top: 70px;
+    margin-left: 60px;
+    position: absolute;
+    float: left;
+    font-family: monospace;
+    font-size: 20px;
+    float: left;
+    
+}
+
+#input_origem {
+    height: 20px;
+    margin-left: 150px;
+    margin-top: 70px;
+    float: left;
+    position: absolute;
+    
+}
+
+#pesquisa_destino {
+     margin-top: 70px;
+    margin-left: 340px;
+    position: absolute;
+    float: left;
+    font-family: monospace;
+    font-size: 20px;
+    float: left;   
+}
+
+#input_destino {
+     height: 20px;
+    margin-left: 440px;
+    margin-top: 70px;
+    float: left;
+    position: absolute;   
+    
+}
+
+#text_data_ida {
+    height: 20px;
+    margin-left: 630px;
+    margin-top: 70px;
+    float: left;
+    position: absolute;      
+      
+}
+
+#input_data_ida {
+    height: 20px;
+    margin-left: 730px;
+    margin-top: 70px;
+    float: left;
+    position: absolute;     
+    
+}
+
+#text_data_volta {
+    height: 20px;
+    margin-left: 900px;
+    margin-top: 70px;
+    float: left;
+    position: absolute;      
+    
+}
+
+#input_data_volta {
+     height: 20px;
+    margin-left: 1010px;
+    margin-top: 70px;
+    float: left;
+    position: absolute;     
+    
+}
+
+#tabela_ida {
+    width: 700px;
+    height: 400px;
+    max-height: 400px;
+    border: solid 1px;
+    margin-top: 50px;
+    margin-left: 200px;
+    float: left
+    
+}
+
+#tabela_volta {
+     width: 700px;
+    height: 400px;
+    border: solid 1px;
+    margin-top: 50px;
+    margin-left: 100px;
+    float: left   
+    
+}
+
+.titulo_tabela_viagem {
+    width: 100%;
+    height: 40px;
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: monospace;
+    padding-top: 10px;
+    
+}
+
+
+.informacoes_viagem {
+    width: 100%;
+    height: 30px;
+    background-color: aliceblue;
+}
+
+.horario_partida {
+    width: 150px;
+    height: 27px;
+    font-size: 16px;
+    font-family: monospace; 
+    border: solid 1px;
+    float: left;
+    padding-top:  3px;
+    text-align: center;
+    font-weight: bold;    
+    
+}
+
+.tipo_onibus {
+    width: 170px;
+    height: 27px;
+    font-size: 16px;
+    font-family: monospace; 
+    border: solid 1px;
+    float: left;
+    padding-top:  3px;
+    text-align: center; 
+    font-weight: bold;
+    
+}
+
+.preco_viagem {
+    width: 122px;
+    height: 27px;
+    font-size: 16px;
+    font-family: monospace; 
+    border: solid 1px;
+    float: left;
+    padding-top:  3px;
+    text-align: center;     
+    font-weight: bold;
+    
+}
+
+.escolha_viagem {
+    width: 98px;
+    height: 27px;
+    font-size: 16px;
+    font-family: monospace; 
+    border: solid 1px;
+    float: left;
+    padding-top:  3px;
+    text-align: center;     
+    font-weight: bold;
+    
+}
+
+
+
+.conteudo_tabela_viagem {
+    width: 100%;
+    height: 28px;
+    
+}
+
+
+
+.horario_partida_dados {
+     width: 150px;
+    height: 21px;
+    font-size: 14px;
+    font-family: monospace; 
+    border: solid 1px;
+    float: left;
+    padding-top:  3px;
+    text-align: center;
+    font-weight: bold;     
+    
+}
+
+.horario_chegada_dados {
+     width: 150px;
+    height: 21px;
+    font-size: 14px;
+    font-family: monospace; 
+    border: solid 1px;
+    float: left;
+    padding-top:  3px;
+    text-align: center;
+    font-weight: bold;   
+    
+}
+
+.tipo_onibus_dados {
+     width: 170px;
+    height: 21px;
+    font-size: 14px;
+    font-family: monospace; 
+    border: solid 1px;
+    float: left;
+    padding-top:  3px;
+    text-align: center;
+    font-weight: bold;   
+    
+}
+
+.preco_dados {
+    width: 122px;
+    height: 21px;
+    font-size: 14px;
+    font-family: monospace; 
+    border: solid 1px;
+    float: left;
+    padding-top:  3px;
+    text-align: center;
+    font-weight: bold;     
+    
+}
+
+.escolha_viagem_dados{
+    width: 98px;
+    height: 21px;
+    font-size: 14px;
+    font-family: monospace; 
+    border: solid 1px;
+    float: left;
+    padding-top:  3px;
+    text-align: center;
+    font-weight: bold;  
+    
+}
+
+.opacao_escolha_viagem {
+    width:18px;
+    height: 18px;
+    background-color: grey;
+    margin: auto;
+    border-radius: 10px;
+    
+}
+
+#next_compra {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-top: 500px;
+    margin-left: 1650px;
+    
+}
+
+#next_compra img {
+     width: 50px;
+    height: 50px;   
+    
+}
+
+
+/** COMPRA DE VIAGENS PASSO 2 **/
+
+#area_compra_passo2 {
+    width: 1700px;
+    background-color: aliceblue;
+    margin: auto;
+    min-height: 800px;
+    height: auto;
+    overflow: hidden;
+    
+}
+
+#container_legenda_assentos {
+    width: 450px;
+    height: 70px;
+    margin-top: 50px;
+    margin-left: 300px;
+    
+}
+
+#legenda_imagem_verde {
+    width: 40px;
+    height: 35px;
+    background-color: green;
+    border-radius: 5px;
+    float: left;
+    position: absolute;
+}
+
+#legenda_descricao_verde {
+    font-family: monospace;
+    margin-left: 50px;
+    margin-top: 8px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    float: left;
+}
+
+#legenda_imagem_vermelho {
+    width: 40px;
+    height: 35px;
+    background-color: red;
+    border-radius: 5px;
+    float: left;
+    position: absolute;
+    margin-left: 150px;
+    
+}
+
+#legenda_descricao_vermelho {
+    font-family: monospace;
+    margin-left: 200px;
+    margin-top: 8px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    float: left;    
+    
+}
+
+#legenda_imagem_cinza {
+    width: 40px;
+    height: 35px;
+    background-color: grey;
+    border-radius: 5px;
+    float: left;
+    position: absolute;
+    margin-left: 300px;  
+    
+}
+
+#legenda_descricao_cinza {
+    font-family: monospace;
+    margin-left: 350px;
+    margin-top: 8px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    float: left;        
+    
+}
+
+#container_micro_onibus {
+    width: 760px;
+    height: 500px;
+    background-color: bisque;
+    margin-top: 30px;
+    margin-left: 150px;
+    float: left;
+}
+
+#microonibus_ida {
+    width: 270px;
+    height: 500px;
+    background-color: bisque;
+    float: left;    
+    
+}
+
+#microonibus_volta {
+    width: 270px;
+    height: 
+    
+}
+
+/*
+
+    Feito por :Eduardo
+    Data: 23/03
+    inicio : 08:03
+
+    PÁGINA DE COMPRAS
+*/
+
+#seguraTodaVendaPassagem{
+    min-height: 500px;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+/*    background-color: dodgerblue;*/
+}
+
+#seguraVenda{
+    width: 75%;
+    min-height: 100px;
+    height: auto;
+    overflow: hidden;
+    float: left;
+/*    margin: auto;*/
+/*    background-color: aliceblue;*/
+}
+
+.caixaV{
+    height: 596px;
+    width: 400px;
+/*    background-color: forestgreen;*/
+    font-family: 'Verdana'; 
+/*    border: solid 1px dimgray;*/
+    float: left;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: 50px;
+}
+
+.imagemVenda{
+    width: 380px;
+    height: 300px;
+/*    background-color: aliceblue;*/
+    margin: auto;
+    
+}
+
+.imagemVenda img{
+    width: inherit;
+    height: inherit;
+}
+
+.testeFT{
+    width: 10px;
+    height: 10px;
+}
+
+.teste11{
+/*    background-color: fuchsia;*/
+}
+
+.nomeVenda{
+    width: 250px;
+/*    background-color: darkslategrey;*/
+    font-size: 20px;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.campoDesc{
+    width: 370px;
+    height: 180px;
+/*    background-color: blue;*/
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.textoDesc{
+    width: 360px;
+    height: 180px;
+    text-align: justify;
+    margin: auto;
+/*    background-color: aliceblue;*/
+}
+
+.precos{
+    width: 100px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+/*    background-color: aliceblue;*/
+    margin: auto;
+}
+
+.botaoC{
+    width: 150px;
+    height: 30px;
+/*    background-color: red;*/
+    margin: auto;
+}
+
+.btComprar{
+    margin-top: 5px;
+    height: inherit;
+    font-size: 20px;
+    width: inherit; 
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+#caixaOpcoesVendas{
+    height: 600px;
+    width: 25%;
+/*    background-color: firebrick;*/
+    float: left;
+/*    margin-left: ;*/
+}
+
+#seguraOpcoes{
+    height: 90%;
+    width: 90%;
+    background-color: aliceblue;
+    margin: auto;
+    margin-top: 20px;
+    font-family: 'Verdana';
+    
+    font-size: 18px;
+}
+
+#alinhaOp{
+    width: inherit;
+    height: 400px;
+/*    background-color: aqua;*/
+    padding-top: 60px;
+    margin: auto;
+}
+
+#campoEstados{
+    width: 150px;
+    margin-left: 20px;
+    padding-top: 20px;
+/*    background-color: aqua;*/
+}
+
+.cbPais{
+    width: 70px;
+    
+}
+
+.camposVendas{
+    width: 150px;
+    margin-left: 20px;
+    padding-top: 20px;
+}
+
+.camposVendas1{
+    width: 90%;
+/*    background-color: dodgerblue;*/
+    margin: auto;
+    margin-top: 20px;
+}
+
+#textoPreco{
+    width: 100px;
+/*    background-color: red;*/
+}
+
+#opcoesPrecos{
+    width: 70%;
+    margin-left: 30px;
+    font-size: 17px;
+/*    background-color: blue;*/
+}
+
+.camposVendas{
+    width: 180px;
+/*    background-color: blueviolet;*/
+}
+
+.btFiltrar{
+    width: 100px;
+
+}
+
+.botaoC1{
+    width: 150px;
+    height: 30px;
+/*    background-color: red;*/
+    margin-left: auto;
+}
+
+.btFiltrar{
+    margin-top: 20px;
+    height: inherit;
+    font-size: 20px;
+    width: inherit; 
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+#caixaVendasCompleta{
+    width: 100%;
+/*    background-color: forestgreen;*/
+    min-height: 600px;
+    height: auto;
+    overflow: hidden;
+    float: left;
+    margin-top: 10px;
+}
+
+/** pÁGINA DE CADASTRO **/ 
+
+/*
+
+    Feito por :Eduardo
+    Data: 26/03
+    inicio : 10:30
+*/
+
+#espaco_cadastro{
+/*    background-color: red;*/
+    width: 100%;
+    height: auto;
+/*    margin: auto;*/
+    font-family: 'Verdana'
+}
+
+#textoCad{
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px;
+    margin-bottom: 15px;
+}
+
+.descCad{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+#sla{
+/*    background-color: red;*/
+    height: 20px;
+    width: 100%;
+}
+
+.coluna{
+     width: 40%;
+/*    background-color: forestgreen;*/
+    float: left;
+    margin-top: 04px;
+/*    margin-left: 10px;*/
+}
+
+.couna{
+     width: 20%;
+/*    background-color: firebrick;*/
+    float: left;
+/*    margin-left: 10px;*/
+}
+
+#textinhoS{
+    width: 20%;
+    text-align: center;
+    font-size: 18px;
+/*    background-color: aliceblue;*/
+}
+
+.linhaEsquerda{
+    width: 760px;
+    padding-top: 10px;
+/*    background-color: darkgray;*/
+    margin: 0px;
+}
+
+#camposCadastro{
+    width: 100%;
+    min-height: 10px;
+    height: auto;
+    overflow: hidden;
+/*    background-color: red;*/
+}
+
+#seguraCamposCad{
+    width: 1200px;
+    min-height: 100px;
+    height: auto;
+/*    background-color: aqua;*/
+    border: solid 1px darkgray;
+    margin: auto;
+    margin-bottom: 10px;
+    
+}
+
+.campoNome{
+    width: 700px;
+    margin: auto;
+/*    background-color: aliceblue;*/
+}
+
+.InicioCampo{
+    width: 120px;
+/*    background-color: fuchsia;*/
+    margin-left: 5px;
+    float: left;
+    font-family: 'Verdana';
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.sla12{
+    width: 505px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+.dtnasc{
+    width: 200px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 5px;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+
+.sexo{
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 18px;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+.campoData{
+    width: 250px;
+/*    background-color: fuchsia;*/
+    margin-left: 5px;
+    float: left;
+    font-family: 'Verdana';
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#camposEnd{
+    width: 1200px;
+/*    background-color: darkviolet;*/
+}
+
+#teste2{
+    margin-top: 25px;
+}
+
+#botao{
+    width: 103px;
+    height: 60px;
+/*    background-color: firebrick;*/
+    margin: auto;
+}
+
+#btCad{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+
+/*
+
+/** MAPA DO SITE **/
+
+#conteudo {
+    width: 100%;
+    min-height: 300px;
+    height: auto;
+    background-color: white;
+
+}
+
+#espaco_menu {
+    height:100px;
+    width: 100%;
+
+}
+
+#mapa_site {
+    width: 100%;
+    height: 420px;
+    background-color: grey;
+
+}
+
+#container_mapa_site {
+    width:1400px;
+    height: 400px;
+    margin: auto;
+
+}
+
+.caixa_mapa_site {
+	width:350px;
+	height:280px;
+	float:left;
+	margin-top:50px;
+	margin-left:85px;
+
+}
+
+.titulo_mapa_site {
+	width:100%;
+	height:25px;
+	text-align:left;
+	font-family: monospace;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight:bold;
+	color:white;
+	margin-left:40px;
+
+
+}
+
+.conteudo_mapa_site {
+	width:100%;
+	min-height:10px;
+	height:auto;
+
+}
+
+.conteudo_mapa_site ul li {
+	text-align:left;
+	font-family: monospace;
+	text-transform: uppercase;
+	font-size: 14px;
+	display:block;
+	margin-right:35px;
+	margin-top:7px;
+
+}
+
+#mapa_redes_sociais {
+	width:90px;
+	height:30px;
+	background-color:white;
+	margin-top:330px;
+	position:absolute;
+	margin-left:630px;
+	border-radius:5px;
+
+
+}
+
+.quadrado_redes_sociais {
+	width:28px;
+	height:30px;
+	background-color:white;
+	float:left;
+	border:solid 1px;
+	border-radius:5px;
+
+}
+
+#espaco_para_rodape {
+    margin-top: 30px;
+    
+}
+
+
+/** RODAPÉ **/
+
+
+#rodape {
+	width:100%;
+	height:60px;
+	background-color:darkgrey;
+
+}
+
+
+#text_rodape {
+	width:100%;
+	margin-top:20px;
+	position:absolute;
+	text-align:center;
+	font-family: monospace;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+/** JS **/
+
+
+.js .item {
+    opacity: 0;
+    visibility:hidden;
+    height: 0;
+    transform: translate3d(0,20px,0);
+    position: absolute;
+    top:0;
+}
+
+.js .item.active {
+	opacity: 1;
+	visibility: visible;
+	transition: .3s;
+	position: relative;
+	top: auto;
+	transform: translate3d(0px,0,0);
+    overflow: visible;
+}
+
+.js .item_frota {
+    opacity: 0;
+    visibility:hidden;
+    height: 0;
+    transform: translate3d(0,20px,0);
+    position: absolute;
+    top:0;
+
+}
+
+.js .item_frota.active {
+	opacity: 1;
+	visibility: visible;
+	transition: .3s;
+	position: relative;
+	top: auto;
+	transform: translate3d(0px,0,0);
+    overflow: visible;
+}
