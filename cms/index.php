@@ -51,6 +51,7 @@ if( isset($_GET['error']) ){
             #container_geral{
                 width : 20%;
                 height : 300px;
+                min-width: 286px;
                 border : solid 1px black;
                 border-radius: 10px;
                 background-color : #999;
@@ -78,9 +79,18 @@ if( isset($_GET['error']) ){
                 height: 40px;
             }
             
+            #logo{
+                width : 296px;
+                height : 152px;
+                margin : 0 auto;
+            }
+            
         </style>
     </head>
     <body>
+        <div id="logo">
+            <img src="imagens/Logo%20por%20extenso.png"/>
+        </div>
         <div id="container_geral">
             <form method="post" name="frm_login" action="index.php">
             <table id="tbl_dados">
