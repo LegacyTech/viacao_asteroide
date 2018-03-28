@@ -1,4 +1,4 @@
-/*CSS da pagina Seja Bem Vindo */
+﻿/*CSS da pagina Seja Bem Vindo */
 
 #principal{
     
@@ -48,7 +48,8 @@
     margin-left: auto;
     text-align: center;
     line-height: 80px;
-    font-size: 20pt
+    font-size: 20pt;
+    color: #FFB334;
 }
 
 #caixa_user{

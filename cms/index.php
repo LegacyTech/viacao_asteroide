@@ -89,7 +89,7 @@ if( isset($_GET['error']) ){
     </head>
     <body>
         <div id="logo">
-            <img src="imagens/Logo%20por%20extenso.png"/>
+            <img src="imagens/Logo%20po%20extenso.png"/>
         </div>
         <div id="container_geral">
             <form method="post" name="frm_login" action="index.php">

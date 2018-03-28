@@ -1,3 +1,10 @@
+<?
+
+ error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
+    session_start('usuario');
+
+?>
+
 <html>
     
     <head>
@@ -32,9 +39,11 @@
             <div id="faixa_meio">
                 <div id="faixa_menu">
                     <!--Opções menu-->
+                    <a href="contatos_cms.php">
                     <div class="caixa_menu">
                         Marketing
                     </div>
+                    </a>
 
                      <div class="caixa_menu">
                         Vendas
@@ -53,7 +62,7 @@
                     </div>
                 </div>
                 <div id="bem_vindo">
-                    Seja bem Vindo @Adm
+                    Seja bem Vindo <?php echo $_SESSION['usuario'];?>
                 </div>
             </div>
             <div id="rodape">
