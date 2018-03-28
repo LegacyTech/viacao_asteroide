@@ -1,5 +1,5 @@
 <!DOCTYPE  html>
-<html lang="pt-br"> 
+<html lang="pt-br">
     <head>
         <title> Menu e Rodapé</title>
         <meta charset="UTF-8">
@@ -12,25 +12,25 @@
             <div id="menu">
                 <ul id="menu_principal">
                     <li> Home </li>
-                    <li> Sobre a Empresa 
+                    <li> Sobre a Empresa
                         <ul class="submenu">
                             <li> Missão, Visão e Valores </li>
                             <li> Nossa Frota </li>
                         </ul>
-                    </li>    
+                    </li>
                     <li> Compre sua Passagem
 						<ul class="submenu">
                             <li> Venda de Passagens </li>
                             <li> Lugares Turísticos </li>
 							<li> Dicas e Recomendações</li>
-                        
+
 					   </ul>
                     <li> Contatos </li>
                 </ul>
             </div>
             <div id="area_usuario">
 				<div id="icon_user_menu">
-				
+
 				</div>
 				<div id="words_user_menu">
 					Faça seu Login
@@ -73,12 +73,12 @@
 					</div>
 					<div id="user_space_senha">
 						<div class="user_email_login">
-                            Senha
+                            Senha:
 						</div>
 						<input class="user_login" type="text" >
-					</div> 
+					</div>
                     <div id="link_cadastro">
-                        
+
                         Não é cadastrado? Clique <span id="edicao_texto_login"> AQUI </span> e crie sua conta.
                     </div>
 				</div>
@@ -89,7 +89,7 @@
 						<div class="titulo_mapa_site">
 							Nossa História
 						</div>
-						<div class="conteudo_mapa_site"> 
+						<div class="conteudo_mapa_site">
 							<ul>
 								<li> Sobre a Empresa </li>
 								<li> Missão, Visão e Valores </li>
@@ -102,7 +102,7 @@
 						<div class="titulo_mapa_site">
 							Compre sua Passagem
 						</div>
-						<div class="conteudo_mapa_site"> 
+						<div class="conteudo_mapa_site">
 							<ul>
 								<li> Comprar </li>
 								<li> Venda de Passagens </li>
@@ -114,16 +114,16 @@
                     <div class="caixa_mapa_site">
 						<div class="titulo_mapa_site">
 							Contatos
-						</div>	
-						<div class="conteudo_mapa_site"> 
+						</div>
+						<div class="conteudo_mapa_site">
 							<ul>
 								<li> Página Contatos </li>
 								<li> Telefone: (11)4141-4141 </li>
 								<li> E-Mail: viacao@asteroid.com </li>
 							</ul>
-						</div>						
+						</div>
                     </div>
-					<div id="mapa_redes_sociais"> 
+					<div id="mapa_redes_sociais">
 						<div class="quadrado_redes_sociais">
 						</div>
 						<div class="quadrado_redes_sociais">
