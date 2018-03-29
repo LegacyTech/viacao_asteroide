@@ -13,7 +13,7 @@ if( isset($_POST['btnOk']) ){
     // Chama o metodo para conectar no BD, e guarda o retorno da conexão na variavel $PDO_conex.
     $POD_conex = $conexao->Conectar();
     
-    $sql = "SELECT idFuncionario, idNivelFuncionario, nome FROM tbl_funcionario WHERE usuario = '$user' AND senha = MD5('$senha') AND ativo = 1 ";
+    $sql = "SELECT idFuncionario, idNivelFuncionario, nome FROM tbl_funcionario WHERE usuario = '$user' AND senha = '$senha' AND ativo = 1 ";
     
     $select = $POD_conex->query($sql);
     

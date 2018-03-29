@@ -1,4 +1,4 @@
-<?
+﻿<?php
 
  error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
     session_start('usuario');
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div id="bem_vindo">
-                    Seja bem Vindo <?php echo $_SESSION['usuario'];?>
+                    Seja bem Vindo <?php echo $_SESSION['nome'];?>
                 </div>
             </div>
             <div id="rodape">
