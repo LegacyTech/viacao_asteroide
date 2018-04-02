@@ -1,0 +1,1143 @@
+-- MySQL dump 10.13  Distrib 5.6.10, for Win64 (x86_64)
+--
+-- Host: localhost    Database: db_viacao_asteroide
+-- ------------------------------------------------------
+-- Server version	5.6.10-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `pg_missao`
+--
+
+DROP TABLE IF EXISTS `pg_missao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pg_missao` (
+  `idVersao` int(11) NOT NULL AUTO_INCREMENT,
+  `missao` text NOT NULL,
+  `visao` text NOT NULL,
+  `valores` text NOT NULL,
+  `ativo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`idVersao`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pg_missao`
+--
+
+LOCK TABLES `pg_missao` WRITE;
+/*!40000 ALTER TABLE `pg_missao` DISABLE KEYS */;
+INSERT INTO `pg_missao` VALUES (7,'gggg','aaaa','bbbb',0),(8,'gggg','aaaa','bbbb',0);
+/*!40000 ALTER TABLE `pg_missao` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pg_nossafrota`
+--
+
+DROP TABLE IF EXISTS `pg_nossafrota`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pg_nossafrota` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) NOT NULL,
+  `descricao` text NOT NULL,
+  `imagem` varchar(255) NOT NULL,
+  `ativo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pg_nossafrota`
+--
+
+LOCK TABLES `pg_nossafrota` WRITE;
+/*!40000 ALTER TABLE `pg_nossafrota` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pg_nossafrota` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pg_pontoturistico`
+--
+
+DROP TABLE IF EXISTS `pg_pontoturistico`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pg_pontoturistico` (
+  `idPontoTuristico` int(11) NOT NULL AUTO_INCREMENT,
+  `idEpoca` int(11) NOT NULL,
+  `imagem` varchar(255) NOT NULL,
+  `descricao` text NOT NULL,
+  `ativo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`idPontoTuristico`),
+  KEY `fk_pontoTuristico_epoca_idx` (`idEpoca`),
+  CONSTRAINT `fk_pontoTuristico_epoca` FOREIGN KEY (`idEpoca`) REFERENCES `tbl_epoca` (`idEpoca`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pg_pontoturistico`
+--
+
+LOCK TABLES `pg_pontoturistico` WRITE;
+/*!40000 ALTER TABLE `pg_pontoturistico` DISABLE KEYS */;
+INSERT INTO `pg_pontoturistico` VALUES (3,3,'imagens/home.png','qfddfdqafd',0),(15,4,'imagens/passageiros2.png','wefdwqdfwdfvwadvc',0),(17,2,'imagens/home.png','Outonoooooooooo',0),(18,1,'imagens/usuario.png','Verããããããããããããããoooo',0);
+/*!40000 ALTER TABLE `pg_pontoturistico` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pg_quemsomos`
+--
+
+DROP TABLE IF EXISTS `pg_quemsomos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pg_quemsomos` (
+  `idVersao` int(11) NOT NULL AUTO_INCREMENT,
+  `quemSomos` text NOT NULL,
+  `imagemQuemSomos` varchar(255) NOT NULL,
+  `historia` text NOT NULL,
+  `imagemHistoria` varchar(255) NOT NULL,
+  `imagemHistoria2` varchar(255) NOT NULL,
+  `imagemHistoria3` varchar(255) NOT NULL,
+  `imagemHistoria4` varchar(255) NOT NULL,
+  `ativo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`idVersao`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pg_quemsomos`
+--
+
+LOCK TABLES `pg_quemsomos` WRITE;
+/*!40000 ALTER TABLE `pg_quemsomos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pg_quemsomos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_acaofuncionario`
+--
+
+DROP TABLE IF EXISTS `tbl_acaofuncionario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_acaofuncionario` (
+  `idAcaoFuncionario` int(11) NOT NULL AUTO_INCREMENT,
+  `data` date NOT NULL,
+  `hora` time(5) NOT NULL,
+  `idFuncionario` int(11) NOT NULL,
+  `idTipoAcao` int(11) NOT NULL,
+  PRIMARY KEY (`idAcaoFuncionario`),
+  KEY `fk_aconFuncionario_TipoAcao_idx` (`idTipoAcao`),
+  KEY `fk_acaoFuncionario_Funcionario_idx` (`idFuncionario`),
+  CONSTRAINT `fk_acaoFuncionario_Funcionario` FOREIGN KEY (`idFuncionario`) REFERENCES `tbl_funcionario` (`idFuncionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_acaoFuncionario_TipoAcao` FOREIGN KEY (`idTipoAcao`) REFERENCES `tbl_tipoacao` (`idTipoAcao`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_acaofuncionario`
+--
+
+LOCK TABLES `tbl_acaofuncionario` WRITE;
+/*!40000 ALTER TABLE `tbl_acaofuncionario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_acaofuncionario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_acessorios`
+--
+
+DROP TABLE IF EXISTS `tbl_acessorios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_acessorios` (
+  `idAcessorios` int(11) NOT NULL AUTO_INCREMENT,
+  `acessorio` varchar(100) NOT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idAcessorios`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_acessorios`
+--
+
+LOCK TABLES `tbl_acessorios` WRITE;
+/*!40000 ALTER TABLE `tbl_acessorios` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_acessorios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_acessoriotipoonibus`
+--
+
+DROP TABLE IF EXISTS `tbl_acessoriotipoonibus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_acessoriotipoonibus` (
+  `idAcessorioTipoOnibus` int(11) NOT NULL AUTO_INCREMENT,
+  `idAcessorios` int(11) NOT NULL,
+  `idTipoOnibus` int(11) NOT NULL,
+  PRIMARY KEY (`idAcessorioTipoOnibus`),
+  KEY `fk_acessorioTipoOnibus_acessorios_idx` (`idAcessorios`),
+  KEY `fk_acessorioTipoOnibus_tipoOnibus_idx` (`idTipoOnibus`),
+  CONSTRAINT `fk_acessorioTipoOnibus_acessorios` FOREIGN KEY (`idAcessorios`) REFERENCES `tbl_acessorios` (`idAcessorios`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_acessorioTipoOnibus_tipoOnibus` FOREIGN KEY (`idTipoOnibus`) REFERENCES `tbl_tipoonibus` (`idTipoOnibus`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_acessoriotipoonibus`
+--
+
+LOCK TABLES `tbl_acessoriotipoonibus` WRITE;
+/*!40000 ALTER TABLE `tbl_acessoriotipoonibus` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_acessoriotipoonibus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_chegada`
+--
+
+DROP TABLE IF EXISTS `tbl_chegada`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_chegada` (
+  `idPontoChegada` int(11) NOT NULL AUTO_INCREMENT,
+  `idPostoRodoviario` int(11) NOT NULL,
+  PRIMARY KEY (`idPontoChegada`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_chegada`
+--
+
+LOCK TABLES `tbl_chegada` WRITE;
+/*!40000 ALTER TABLE `tbl_chegada` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_chegada` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_cidade`
+--
+
+DROP TABLE IF EXISTS `tbl_cidade`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_cidade` (
+  `codCidade` int(11) NOT NULL AUTO_INCREMENT,
+  `nomeCidade` varchar(50) NOT NULL,
+  `codEstado` int(11) NOT NULL,
+  PRIMARY KEY (`codCidade`),
+  KEY `fk_cidadeEstado_idx` (`codEstado`),
+  CONSTRAINT `fk_cidadeEstado` FOREIGN KEY (`codEstado`) REFERENCES `tbl_estado` (`codEstado`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_cidade`
+--
+
+LOCK TABLES `tbl_cidade` WRITE;
+/*!40000 ALTER TABLE `tbl_cidade` DISABLE KEYS */;
+INSERT INTO `tbl_cidade` VALUES (1,'Jandira',25),(2,'Barueri',25),(3,'Osasco',25),(4,'Itapevi',25),(5,'Cotia',25);
+/*!40000 ALTER TABLE `tbl_cidade` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_cliente`
+--
+
+DROP TABLE IF EXISTS `tbl_cliente`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_cliente` (
+  `idCliente` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) NOT NULL,
+  `sobrenome` varchar(45) NOT NULL,
+  `cpf` varchar(14) NOT NULL,
+  `rg` varchar(12) NOT NULL,
+  `idEndereco` int(11) NOT NULL,
+  `sexo` char(1) NOT NULL,
+  `celular` varchar(13) NOT NULL,
+  `telefone` varchar(13) NOT NULL,
+  `senha` varchar(20) NOT NULL,
+  `email` varchar(80) NOT NULL,
+  `idSubPassageiros` int(11) NOT NULL,
+  PRIMARY KEY (`idCliente`),
+  KEY `fk_clienteEndereco_idx` (`idEndereco`),
+  KEY `fk_clienteSubPassageiros_idx` (`idSubPassageiros`),
+  CONSTRAINT `fk_clienteEndereco` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_clienteSubPassageiros` FOREIGN KEY (`idSubPassageiros`) REFERENCES `tbl_subpassageiros` (`idSubPassageiros`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_cliente`
+--
+
+LOCK TABLES `tbl_cliente` WRITE;
+/*!40000 ALTER TABLE `tbl_cliente` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_cliente` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_dicas`
+--
+
+DROP TABLE IF EXISTS `tbl_dicas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_dicas` (
+  `idDicas` int(11) NOT NULL AUTO_INCREMENT,
+  `nomeLugar` varchar(255) NOT NULL,
+  `descricaoDica` text NOT NULL,
+  `imgDica` varchar(255) NOT NULL,
+  `ativo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`idDicas`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_dicas`
+--
+
+LOCK TABLES `tbl_dicas` WRITE;
+/*!40000 ALTER TABLE `tbl_dicas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_dicas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_endereco`
+--
+
+DROP TABLE IF EXISTS `tbl_endereco`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_endereco` (
+  `idEndereco` int(11) NOT NULL AUTO_INCREMENT,
+  `bairro` varchar(20) NOT NULL,
+  `logradouro` varchar(30) NOT NULL,
+  `idTipoEndereco` int(11) NOT NULL,
+  `cep` varchar(9) NOT NULL,
+  `codCidade` int(11) NOT NULL,
+  PRIMARY KEY (`idEndereco`),
+  KEY `fk_enderecoCidade_idx` (`codCidade`),
+  KEY `fk_enderecoTipoEnd_idx` (`idTipoEndereco`),
+  CONSTRAINT `fk_enderecoCidade` FOREIGN KEY (`codCidade`) REFERENCES `tbl_cidade` (`codCidade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_enderecoTipoEnd` FOREIGN KEY (`idTipoEndereco`) REFERENCES `tbl_tipoendereco` (`idTipoEndereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_endereco`
+--
+
+LOCK TABLES `tbl_endereco` WRITE;
+/*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
+INSERT INTO `tbl_endereco` VALUES (1,'Jardim Rosa Emilia','João Longo',1,'06608-420',1),(2,'José da Silva','Luiz Moura',2,'06623-140',3);
+/*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_epoca`
+--
+
+DROP TABLE IF EXISTS `tbl_epoca`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_epoca` (
+  `idEpoca` int(11) NOT NULL AUTO_INCREMENT,
+  `epoca` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idEpoca`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_epoca`
+--
+
+LOCK TABLES `tbl_epoca` WRITE;
+/*!40000 ALTER TABLE `tbl_epoca` DISABLE KEYS */;
+INSERT INTO `tbl_epoca` VALUES (1,'Verão'),(2,'Outono'),(3,'Primavera'),(4,'Inverno');
+/*!40000 ALTER TABLE `tbl_epoca` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_estado`
+--
+
+DROP TABLE IF EXISTS `tbl_estado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_estado` (
+  `codEstado` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(40) NOT NULL,
+  `sigla` varchar(5) NOT NULL,
+  PRIMARY KEY (`codEstado`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_estado`
+--
+
+LOCK TABLES `tbl_estado` WRITE;
+/*!40000 ALTER TABLE `tbl_estado` DISABLE KEYS */;
+INSERT INTO `tbl_estado` VALUES (1,'Acre','AC'),(2,'Alagoas','AL'),(3,'Amapá','AP'),(4,'Amazonas','AM'),(5,'Bahia','BA'),(6,'Ceará','CE'),(7,'Distrito Federal','DF'),(8,'Espírito Santo','ES'),(9,'Goiás','GO'),(10,'Maranhão','MA'),(11,'Mato Grosso','MT'),(12,'Mato Grosso do Sul','MS'),(13,'Minas Gerais','MG'),(14,'Pará','PA'),(15,'Paraíba','PB'),(16,'Paraná','PR'),(17,'Pernambuco','PE'),(18,'Piauí','PI'),(19,'Rio de Janeiro','RJ'),(20,'Rio Grande do Norte','RN'),(21,'Rio Grande do Sul','RS'),(22,'Rondônia','RO'),(23,'Roraima','RR'),(24,'Santa Catarina','SC'),(25,'São Paulo','SP'),(26,'Sergipe','SE'),(27,'Tocantins','TO');
+/*!40000 ALTER TABLE `tbl_estado` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_faleconosco`
+--
+
+DROP TABLE IF EXISTS `tbl_faleconosco`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_faleconosco` (
+  `idFaleConosco` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(45) DEFAULT NULL,
+  `critica` varchar(300) DEFAULT NULL,
+  `finalizado` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`idFaleConosco`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_faleconosco`
+--
+
+LOCK TABLES `tbl_faleconosco` WRITE;
+/*!40000 ALTER TABLE `tbl_faleconosco` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_faleconosco` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_fichamanutencao`
+--
+
+DROP TABLE IF EXISTS `tbl_fichamanutencao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_fichamanutencao` (
+  `idFichaManutencao` int(11) NOT NULL AUTO_INCREMENT,
+  `idOnibus` int(11) NOT NULL,
+  `abertura` date NOT NULL,
+  `fechamento` date NOT NULL,
+  `item` varchar(255) NOT NULL,
+  `valorGasto` decimal(10,2) NOT NULL,
+  `observacao` varchar(255) DEFAULT NULL,
+  `finalizado` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`idFichaManutencao`),
+  KEY `fk_ficha_onibus_idx` (`idOnibus`),
+  CONSTRAINT `fk_ficha_onibus` FOREIGN KEY (`idOnibus`) REFERENCES `tbl_onibus` (`idOnibus`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_fichamanutencao`
+--
+
+LOCK TABLES `tbl_fichamanutencao` WRITE;
+/*!40000 ALTER TABLE `tbl_fichamanutencao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_fichamanutencao` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_funcionario`
+--
+
+DROP TABLE IF EXISTS `tbl_funcionario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_funcionario` (
+  `idFuncionario` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(70) NOT NULL,
+  `sobrenome` varchar(70) NOT NULL,
+  `rg` varchar(45) NOT NULL,
+  `cpf` varchar(45) NOT NULL,
+  `usuario` varchar(45) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `idEndereco` int(11) NOT NULL,
+  `idNivelFuncionario` int(11) NOT NULL,
+  `ativo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`idFuncionario`),
+  KEY `fk_funcionarioNivel_idx` (`idNivelFuncionario`),
+  KEY `fk_funcionarioEndereco_idx` (`idEndereco`),
+  CONSTRAINT `fk_funcionarioEndereco` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_funcionarioNivel` FOREIGN KEY (`idNivelFuncionario`) REFERENCES `tbl_nivelfuncionario` (`idNivelFuncionario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=big5;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_funcionario`
+--
+
+LOCK TABLES `tbl_funcionario` WRITE;
+/*!40000 ALTER TABLE `tbl_funcionario` DISABLE KEYS */;
+INSERT INTO `tbl_funcionario` VALUES (4,'Fulano','Souza','24.512.248-9','312.698.475-12','adm','123',2,1,1);
+/*!40000 ALTER TABLE `tbl_funcionario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_gastoadicional`
+--
+
+DROP TABLE IF EXISTS `tbl_gastoadicional`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_gastoadicional` (
+  `idGastoAdicional` int(11) NOT NULL AUTO_INCREMENT,
+  `valor` decimal(10,2) NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `idViagem` int(11) NOT NULL,
+  PRIMARY KEY (`idGastoAdicional`),
+  KEY `fk_viagem_gastoAdicional_idx` (`idViagem`),
+  CONSTRAINT `fk_viagem_gastoAdicional` FOREIGN KEY (`idViagem`) REFERENCES `tbl_viagem` (`idViagem`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_gastoadicional`
+--
+
+LOCK TABLES `tbl_gastoadicional` WRITE;
+/*!40000 ALTER TABLE `tbl_gastoadicional` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_gastoadicional` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_guiche`
+--
+
+DROP TABLE IF EXISTS `tbl_guiche`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_guiche` (
+  `idGuiche` int(11) NOT NULL AUTO_INCREMENT,
+  `qntVendas` varchar(100) NOT NULL,
+  `idPostoRodoviario` int(11) NOT NULL,
+  PRIMARY KEY (`idGuiche`),
+  KEY `fk_guichePostoRodoviario_idx` (`idPostoRodoviario`),
+  CONSTRAINT `fk_guichePostoRodoviario` FOREIGN KEY (`idPostoRodoviario`) REFERENCES `tbl_postorodoviario` (`idPostoRodoviario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_guiche`
+--
+
+LOCK TABLES `tbl_guiche` WRITE;
+/*!40000 ALTER TABLE `tbl_guiche` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_guiche` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_item`
+--
+
+DROP TABLE IF EXISTS `tbl_item`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_item` (
+  `idItem` int(11) NOT NULL AUTO_INCREMENT,
+  `item` varchar(45) NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `intervalo` int(11) NOT NULL,
+  `ativo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`idItem`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_item`
+--
+
+LOCK TABLES `tbl_item` WRITE;
+/*!40000 ALTER TABLE `tbl_item` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_item` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_manutencao`
+--
+
+DROP TABLE IF EXISTS `tbl_manutencao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_manutencao` (
+  `idManutencao` int(11) NOT NULL AUTO_INCREMENT,
+  `idOnibus` int(11) NOT NULL,
+  `idFicha` int(11) NOT NULL,
+  `idItem` int(11) NOT NULL,
+  `quilometragem` int(11) NOT NULL,
+  PRIMARY KEY (`idManutencao`),
+  KEY `fk_manutencao_onibus_idx` (`idOnibus`),
+  KEY `fk_manutencao_ficha_idx` (`idFicha`),
+  KEY `fk_manutencao_item_idx` (`idItem`),
+  CONSTRAINT `fk_manutencao_ficha` FOREIGN KEY (`idFicha`) REFERENCES `tbl_fichamanutencao` (`idFichaManutencao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_manutencao_item` FOREIGN KEY (`idItem`) REFERENCES `tbl_item` (`idItem`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_manutencao_onibus` FOREIGN KEY (`idOnibus`) REFERENCES `tbl_onibus` (`idOnibus`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_manutencao`
+--
+
+LOCK TABLES `tbl_manutencao` WRITE;
+/*!40000 ALTER TABLE `tbl_manutencao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_manutencao` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_motorista`
+--
+
+DROP TABLE IF EXISTS `tbl_motorista`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_motorista` (
+  `idMotorista` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
+  `sobreNome` varchar(75) NOT NULL,
+  `dtNasc` date NOT NULL,
+  `RG` varchar(12) NOT NULL,
+  `CPF` varchar(14) NOT NULL,
+  `CNH` varchar(11) NOT NULL,
+  `telefone` varchar(45) NOT NULL,
+  `celular` varchar(45) NOT NULL,
+  `email` varchar(80) NOT NULL,
+  `idEnd` int(11) NOT NULL,
+  `ativo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`idMotorista`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_motorista`
+--
+
+LOCK TABLES `tbl_motorista` WRITE;
+/*!40000 ALTER TABLE `tbl_motorista` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_motorista` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_nivelfuncionario`
+--
+
+DROP TABLE IF EXISTS `tbl_nivelfuncionario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_nivelfuncionario` (
+  `idNivelFuncionario` int(11) NOT NULL AUTO_INCREMENT,
+  `nivel` varchar(50) NOT NULL,
+  PRIMARY KEY (`idNivelFuncionario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_nivelfuncionario`
+--
+
+LOCK TABLES `tbl_nivelfuncionario` WRITE;
+/*!40000 ALTER TABLE `tbl_nivelfuncionario` DISABLE KEYS */;
+INSERT INTO `tbl_nivelfuncionario` VALUES (1,'Adiministração'),(2,'Marketing');
+/*!40000 ALTER TABLE `tbl_nivelfuncionario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_onibus`
+--
+
+DROP TABLE IF EXISTS `tbl_onibus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_onibus` (
+  `idOnibus` int(11) NOT NULL AUTO_INCREMENT,
+  `placa` varchar(8) NOT NULL,
+  `idTipoOnibus` int(11) NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `numFabricacao` varchar(9) NOT NULL,
+  `ativo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`idOnibus`),
+  KEY `fk_onibus_tipo_idx` (`idTipoOnibus`),
+  CONSTRAINT `fk_onibus_tipo` FOREIGN KEY (`idTipoOnibus`) REFERENCES `tbl_tipoonibus` (`idTipoOnibus`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_onibus`
+--
+
+LOCK TABLES `tbl_onibus` WRITE;
+/*!40000 ALTER TABLE `tbl_onibus` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_onibus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_partida`
+--
+
+DROP TABLE IF EXISTS `tbl_partida`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_partida` (
+  `idPontoPartida` int(11) NOT NULL AUTO_INCREMENT,
+  `idPostoRodoviario` int(11) NOT NULL,
+  PRIMARY KEY (`idPontoPartida`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_partida`
+--
+
+LOCK TABLES `tbl_partida` WRITE;
+/*!40000 ALTER TABLE `tbl_partida` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_partida` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_passagem`
+--
+
+DROP TABLE IF EXISTS `tbl_passagem`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_passagem` (
+  `idPassagem` int(11) NOT NULL AUTO_INCREMENT,
+  `valor` varchar(8) NOT NULL,
+  `acento` varchar(2) NOT NULL,
+  `voltar` tinyint(1) NOT NULL,
+  `idCliente` int(11) NOT NULL,
+  `idGuiche` int(11) NOT NULL,
+  `idPontoParada` int(11) NOT NULL,
+  `idViagem` int(11) NOT NULL,
+  PRIMARY KEY (`idPassagem`),
+  KEY `fk_pasagemCliente_idx` (`idCliente`),
+  KEY `fk_passagemGuiche_idx` (`idGuiche`),
+  KEY `fk_passagemPontoParada_idx` (`idPontoParada`),
+  KEY `fk_passagemViagem_idx` (`idViagem`),
+  CONSTRAINT `fk_pasagemCliente` FOREIGN KEY (`idCliente`) REFERENCES `tbl_cliente` (`idCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_passagemGuiche` FOREIGN KEY (`idGuiche`) REFERENCES `tbl_guiche` (`idGuiche`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_passagemPontoParada` FOREIGN KEY (`idPontoParada`) REFERENCES `tbl_pontoparada` (`idPontoParada`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_passagemViagem` FOREIGN KEY (`idViagem`) REFERENCES `tbl_viagem` (`idViagem`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_passagem`
+--
+
+LOCK TABLES `tbl_passagem` WRITE;
+/*!40000 ALTER TABLE `tbl_passagem` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_passagem` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_pergunta`
+--
+
+DROP TABLE IF EXISTS `tbl_pergunta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_pergunta` (
+  `idPergunta` int(11) NOT NULL AUTO_INCREMENT,
+  `pergunta` varchar(200) NOT NULL,
+  `idTipoPergunta` int(11) NOT NULL,
+  PRIMARY KEY (`idPergunta`),
+  KEY `fk_perguntaTipo_idx` (`idTipoPergunta`),
+  CONSTRAINT `fk_perguntaTipo` FOREIGN KEY (`idTipoPergunta`) REFERENCES `tbl_tipopergunta` (`idTipoPergunta`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_pergunta`
+--
+
+LOCK TABLES `tbl_pergunta` WRITE;
+/*!40000 ALTER TABLE `tbl_pergunta` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_pergunta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_perguntaresposta`
+--
+
+DROP TABLE IF EXISTS `tbl_perguntaresposta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_perguntaresposta` (
+  `idPerguntaResposta` int(11) NOT NULL AUTO_INCREMENT,
+  `idPergunta` int(11) NOT NULL,
+  `idResposta1` int(11) NOT NULL,
+  PRIMARY KEY (`idPerguntaResposta`),
+  KEY `fk_perguntaResposta_Pergunta_idx` (`idPergunta`),
+  KEY `fk_perguntaResposta_Resposta_idx` (`idResposta1`),
+  CONSTRAINT `fk_perguntaResposta_Pergunta` FOREIGN KEY (`idPergunta`) REFERENCES `tbl_pergunta` (`idPergunta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_perguntaResposta_Resposta` FOREIGN KEY (`idResposta1`) REFERENCES `tbl_resposta1` (`idResposta1`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_perguntaresposta`
+--
+
+LOCK TABLES `tbl_perguntaresposta` WRITE;
+/*!40000 ALTER TABLE `tbl_perguntaresposta` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_perguntaresposta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_pontoparada`
+--
+
+DROP TABLE IF EXISTS `tbl_pontoparada`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_pontoparada` (
+  `idPontoParada` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `statusMotorista` tinyint(1) NOT NULL,
+  `idViagem` int(11) NOT NULL,
+  PRIMARY KEY (`idPontoParada`),
+  KEY `fk_idViagem_pontoParada_idx` (`idViagem`),
+  CONSTRAINT `fk_idViagem_pontoParada` FOREIGN KEY (`idViagem`) REFERENCES `tbl_viagem` (`idViagem`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_pontoparada`
+--
+
+LOCK TABLES `tbl_pontoparada` WRITE;
+/*!40000 ALTER TABLE `tbl_pontoparada` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_pontoparada` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_postorodoviario`
+--
+
+DROP TABLE IF EXISTS `tbl_postorodoviario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_postorodoviario` (
+  `idPostoRodoviario` int(11) NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(80) NOT NULL,
+  `idEndereco` int(11) NOT NULL,
+  `telefone` varchar(13) NOT NULL,
+  PRIMARY KEY (`idPostoRodoviario`),
+  KEY `fk_postoEndereco_idx` (`idEndereco`),
+  CONSTRAINT `fk_postoEndereco` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_postorodoviario`
+--
+
+LOCK TABLES `tbl_postorodoviario` WRITE;
+/*!40000 ALTER TABLE `tbl_postorodoviario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_postorodoviario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_resposta1`
+--
+
+DROP TABLE IF EXISTS `tbl_resposta1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_resposta1` (
+  `idResposta1` int(11) NOT NULL AUTO_INCREMENT,
+  `resposta` varchar(255) NOT NULL,
+  `idTipoPergunta` int(11) NOT NULL,
+  PRIMARY KEY (`idResposta1`),
+  KEY `fk_resposta1Tipo_idx` (`idTipoPergunta`),
+  CONSTRAINT `fk_resposta1Tipo` FOREIGN KEY (`idTipoPergunta`) REFERENCES `tbl_tipopergunta` (`idTipoPergunta`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_resposta1`
+--
+
+LOCK TABLES `tbl_resposta1` WRITE;
+/*!40000 ALTER TABLE `tbl_resposta1` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_resposta1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_resposta1resposta2`
+--
+
+DROP TABLE IF EXISTS `tbl_resposta1resposta2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_resposta1resposta2` (
+  `idResposta1Resposta2` int(11) NOT NULL AUTO_INCREMENT,
+  `idResposta1` int(11) NOT NULL,
+  `idResposta2` int(11) NOT NULL,
+  PRIMARY KEY (`idResposta1Resposta2`),
+  KEY `fk_respostaResposta_resposta1_idx` (`idResposta1`),
+  KEY `fk_respostaResposta_resposta2_idx` (`idResposta2`),
+  CONSTRAINT `fk_respostaResposta_resposta1` FOREIGN KEY (`idResposta1`) REFERENCES `tbl_resposta1` (`idResposta1`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_respostaResposta_resposta2` FOREIGN KEY (`idResposta2`) REFERENCES `tbl_resposta2` (`idResposta2`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_resposta1resposta2`
+--
+
+LOCK TABLES `tbl_resposta1resposta2` WRITE;
+/*!40000 ALTER TABLE `tbl_resposta1resposta2` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_resposta1resposta2` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_resposta2`
+--
+
+DROP TABLE IF EXISTS `tbl_resposta2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_resposta2` (
+  `idResposta2` int(11) NOT NULL AUTO_INCREMENT,
+  `resposta1` varchar(255) NOT NULL,
+  `idTipoPergunta` int(11) NOT NULL,
+  PRIMARY KEY (`idResposta2`),
+  KEY `fk_resposta2Tipo_idx` (`idTipoPergunta`),
+  CONSTRAINT `fk_resposta2Tipo` FOREIGN KEY (`idTipoPergunta`) REFERENCES `tbl_tipopergunta` (`idTipoPergunta`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_resposta2`
+--
+
+LOCK TABLES `tbl_resposta2` WRITE;
+/*!40000 ALTER TABLE `tbl_resposta2` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_resposta2` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_subpassageiros`
+--
+
+DROP TABLE IF EXISTS `tbl_subpassageiros`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_subpassageiros` (
+  `idSubPassageiros` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(30) NOT NULL,
+  `sobrenome` varchar(80) NOT NULL,
+  `documento` varchar(30) NOT NULL,
+  PRIMARY KEY (`idSubPassageiros`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_subpassageiros`
+--
+
+LOCK TABLES `tbl_subpassageiros` WRITE;
+/*!40000 ALTER TABLE `tbl_subpassageiros` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_subpassageiros` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_tipoacao`
+--
+
+DROP TABLE IF EXISTS `tbl_tipoacao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_tipoacao` (
+  `idTipoAcao` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(100) NOT NULL,
+  PRIMARY KEY (`idTipoAcao`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_tipoacao`
+--
+
+LOCK TABLES `tbl_tipoacao` WRITE;
+/*!40000 ALTER TABLE `tbl_tipoacao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_tipoacao` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_tipoendereco`
+--
+
+DROP TABLE IF EXISTS `tbl_tipoendereco`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_tipoendereco` (
+  `idTipoEndereco` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(100) NOT NULL,
+  PRIMARY KEY (`idTipoEndereco`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_tipoendereco`
+--
+
+LOCK TABLES `tbl_tipoendereco` WRITE;
+/*!40000 ALTER TABLE `tbl_tipoendereco` DISABLE KEYS */;
+INSERT INTO `tbl_tipoendereco` VALUES (1,'residencial'),(2,'comercial');
+/*!40000 ALTER TABLE `tbl_tipoendereco` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_tipoonibus`
+--
+
+DROP TABLE IF EXISTS `tbl_tipoonibus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_tipoonibus` (
+  `idTipoOnibus` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(50) NOT NULL,
+  `qntLugares` varchar(2) NOT NULL,
+  `andares` int(11) NOT NULL,
+  PRIMARY KEY (`idTipoOnibus`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_tipoonibus`
+--
+
+LOCK TABLES `tbl_tipoonibus` WRITE;
+/*!40000 ALTER TABLE `tbl_tipoonibus` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_tipoonibus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_tipopergunta`
+--
+
+DROP TABLE IF EXISTS `tbl_tipopergunta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_tipopergunta` (
+  `idTipoPergunta` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(80) NOT NULL,
+  PRIMARY KEY (`idTipoPergunta`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_tipopergunta`
+--
+
+LOCK TABLES `tbl_tipopergunta` WRITE;
+/*!40000 ALTER TABLE `tbl_tipopergunta` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_tipopergunta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_usuariodesktop`
+--
+
+DROP TABLE IF EXISTS `tbl_usuariodesktop`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_usuariodesktop` (
+  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) NOT NULL,
+  `sobrenome` varchar(45) NOT NULL,
+  `email` varchar(80) NOT NULL,
+  `cpf` varchar(14) NOT NULL,
+  `ativo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`idUsuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_usuariodesktop`
+--
+
+LOCK TABLES `tbl_usuariodesktop` WRITE;
+/*!40000 ALTER TABLE `tbl_usuariodesktop` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_usuariodesktop` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_viagem`
+--
+
+DROP TABLE IF EXISTS `tbl_viagem`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_viagem` (
+  `idViagem` int(11) NOT NULL AUTO_INCREMENT,
+  `dtPartida` date NOT NULL,
+  `hrPartida` time(5) NOT NULL,
+  `hrChegada` time(5) NOT NULL,
+  `hrChegadaReal` time(5) DEFAULT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `tamanhoRota` int(11) DEFAULT NULL,
+  `idPontoPartida` int(11) NOT NULL,
+  `idPontoChegada` int(11) NOT NULL,
+  `idOnibus` int(11) NOT NULL,
+  `idMotorista` int(11) NOT NULL,
+  `idEpoca` int(11) NOT NULL,
+  `finalizada` tinyint(1) NOT NULL,
+  PRIMARY KEY (`idViagem`),
+  KEY `fk_viagemPartida_idx` (`idPontoPartida`),
+  KEY `fk_viagemChegada_idx` (`idPontoChegada`),
+  KEY `fk_viagem_onibus_idx` (`idOnibus`),
+  KEY `fk_viagem_motorista_idx` (`idMotorista`),
+  KEY `fk_viagem_epoca_idx` (`idEpoca`),
+  CONSTRAINT `fk_viagemChegada` FOREIGN KEY (`idPontoChegada`) REFERENCES `tbl_chegada` (`idPontoChegada`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_viagemPartida` FOREIGN KEY (`idPontoPartida`) REFERENCES `tbl_partida` (`idPontoPartida`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_viagem_epoca` FOREIGN KEY (`idEpoca`) REFERENCES `tbl_epoca` (`idEpoca`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_viagem_motorista` FOREIGN KEY (`idMotorista`) REFERENCES `tbl_motorista` (`idMotorista`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_viagem_onibus` FOREIGN KEY (`idOnibus`) REFERENCES `tbl_onibus` (`idOnibus`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_viagem`
+--
+
+LOCK TABLES `tbl_viagem` WRITE;
+/*!40000 ALTER TABLE `tbl_viagem` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_viagem` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-03-29 11:05:15
